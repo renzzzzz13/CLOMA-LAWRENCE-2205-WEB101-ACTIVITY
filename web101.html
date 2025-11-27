@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Meet the Team</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+         body {
+        margin: 0;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #e8ecf6, #f4f7ff, #e3e8f3);
+        background-attachment: fixed;
+        color: #333;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    .bg-circle1 {
+        position: fixed;
+        top: -120px;
+        left: -120px;
+        width: 380px;
+        height: 380px;
+        background: radial-gradient(circle, #6f89da, #4f6ac8, transparent);
+        opacity: 0.22;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    .bg-circle2 {
+        position: fixed;
+        bottom: -150px;
+        right: -150px;
+        width: 450px;
+        height: 450px;
+        background: radial-gradient(circle, #8aa9e9, #5f7ed7, transparent);
+        opacity: 0.18;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    .page-header {
+        width: 100%;
+        padding: 20px 40px;
+        background: linear-gradient(90deg, #1f358d, #3558c5);
+        color: white;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+        border-bottom: 4px solid rgba(255,255,255,0.25);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .back-home-link {
+        display: inline-block;
+        padding: 8px 18px;
+        border-radius: 25px;
+        background: #ff9f43;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .back-home-link:hover {
+        background: #ffb74d;
+        transform: scale(1.05);
+    }
+    .back-home-link i {
+        margin-right: 6px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #192a56;
+        margin-bottom: 50px;
+        letter-spacing: 1px;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    }
+
+    .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: left;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        transition: 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #dcdcdc;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .photo-container {
+        width: 100%;
+        height: 280px;
+        overflow: hidden;
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 18px;
+        border: none;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        transition: 0.45s ease;
+        top: 0;
+        left: 0;
+    }
+
+    .photo-main { opacity: 1; }
+    .photo-hover { opacity: 0; }
+
+    .photo-container:hover .photo-main {
+        transform: scale(1.12);
+        opacity: 0;
+    }
+
+    .photo-container:hover .photo-hover {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+    .name {
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+        color: #192a56;
+        border-bottom: 2px solid #f0f2f5;
+        padding-bottom: 10px;
+    }
+
+    .details {
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.6;
+    }
+
+    .details p {
+        margin: 8px 0;
+    }
+
+    .label {
+        font-weight: 600;
+        color: #333;
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.9rem;
+    }
+
+    .details a {
+        color: #273c75;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .details a:hover {
+        color: #ff9f43;
+        text-decoration: underline;
+    }
+
+    .details p:last-child {
+        font-style: italic;
+        margin-top: 15px;
+        padding-top: 10px;
+        border-top: 1px dashed #e0e0e0;
+        color: #7f8fa6;
+    }
+
+    .details p:last-child .label {
+        color: #192a56;
+        font-style: normal;
+    }
+
+        /* === PREMIUM BACKGROUND DESIGN === */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #e8ecf6, #f4f7ff, #e3e8f3);
+            background-attachment: fixed;
+            color: #333;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* floating glow circles */
+        .bg-circle1 {
+            position: fixed;
+            top: -120px;
+            left: -120px;
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, #6f89da, #4f6ac8, transparent);
+            opacity: 0.22;
+            border-radius: 50%;
+            z-index: -1;
+        }
+        .bg-circle2 {
+            position: fixed;
+            bottom: -150px;
+            right: -150px;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #8aa9e9, #5f7ed7, transparent);
+            opacity: 0.18;
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        /* === FORMAL HEADER === */
+        .page-header {
+            width: 100%;
+            padding: 25px 40px;
+            background: linear-gradient(90deg, #1f358d, #3558c5);
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+            border-bottom: 4px solid rgba(255,255,255,0.25);
+        }
+
+        /* Your ORIGINAL CODE starts here (not modified) */
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .back-home-link {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: #34495e;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .back-home-link i {
+            margin-right: 5px;
+        }
+
+        .back-home-link:hover {
+            background-color: #4a6582;
+            transform: translateY(-1px);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #192a56;
+            margin-bottom: 50px;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: left;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #dcdcdc;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .photo-container {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+            margin-bottom: 18px;
+            border: none;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: 0.45s ease;
+            top: 0;
+            left: 0;
+        }
+
+        .photo-main { opacity: 1; }
+        .photo-hover { opacity: 0; }
+
+        .photo-container:hover .photo-main {
+            transform: scale(1.12);
+            opacity: 0;
+        }
+
+        .photo-container:hover .photo-hover {
+            transform: scale(1.12);
+            opacity: 1;
+        }
+
+        .name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #192a56;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+        }
+
+        .details {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .details p {
+            margin: 8px 0;
+        }
+
+        .label {
+            font-weight: 600;
+            color: #333;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.9rem;
+        }
+
+        .details a {
+            color: #273c75;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .details a:hover {
+            color: #ff9f43;
+            text-decoration: underline;
+        }
+
+        .details p:last-child {
+            font-style: italic;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #e0e0e0;
+            color: #7f8fa6;
+        }
+
+        .details p:last-child .label {
+            color: #192a56;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Added Background Shapes -->
+    <div class="bg-circle1"></div>
+    <div class="bg-circle2"></div>
+
+    <!-- Added Formal Header -->
+    <div class="page-header">Meet the Team – Portfolio Dashboard</div>
+
+    <!-- Your Original Content -->
+    <a href="index.html" class="back-home-link">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+    </a>
+
+    <div class="container">
+        <h1>Meet the Team</h1>
+
+        <div class="team">
+
+           
+
+            <div class="card">
+                <div class="photo-container">
+                    <img src="Magbuhos.jpg" class="photo-main" />
+                    <img src="Magbuhos_meme.jpg" class="photo-hover" />
+                </div>
+                <div class="name">Magbuhos, Johnmichael R, "boo, magbu idol magbu"</div>
+                <div class="details">
+                    <p><span class="label"> February 1 (19 years old)</span></p>
+                    <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/johnmichael.magbuhos.2024/" target="_blank">Johnmichael Magbuhos</a></p>
+                    <p><span class="label">About:</span><br> Ako si magbu isa akong blogger na sana balang araw makilala ako ng maraming tao at sana marami din saaking mag mahal na mga taga hanga bilang isang blogger.</p>
+                    <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br> Pandesal kasi sa bawat tingin mo sa pandesal ko parang kinakain mo na ako.</p>
+                </div>
+            </div>
+
+        
+           <!-- PERSON 2 -->
+      <div class="card">
+        <div class="photo-container">
+          <img src="cloma.jpg" class="photo-main" />
+          <img src="cloma_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Lawrence Anthony V. Cloma "Renz"</div>
+        <div class="details">
+          <p><span class="label">June 13 (20 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/itsme.lawrence13" target="_blank">Lawrence Villena Cloma</a></p>
+          <p><span class="label">About: </span><br>
+          A down-to-earth student who's engaged about IT Industry, and also loves to ride his motorcycle to relieve stress.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          It would be pizza, because everyone wants a slice of me.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo-container">
+          <img src="dacanay.jpg" class="photo-main" />
+          <img src="dacanay_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Keith Elliot P. Dacanay "Kei"</div>
+        <div class="details">
+          <p><span class="label">March 25 (24 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/kei.dacanay.1/" target="_blank">Kei Dacanay</a></p>
+          <p><span class="label">About:</span><br>
+          A loyal and hard working student who is passionate about coding, gaming takes most of his time though.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Ice cream that's been left in the freezer for a week, because I want them to take their time with me.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo-container">
+          <img src="Ocaya.jpg" class="photo-main" />
+          <img src="Ocaya_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Ernest L. Ocaya "kulot, Fukuda, Nest"</div>
+        <div class="details">
+          <p><span class="label">July 16 (21 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/share/1Erg7mjXCV/" target="_blank">Ocaya Ernest</a></p>
+          <p><span class="label">About: </span><br>
+         Kind student, cheerful, helpful, friendly, and above all fun to be with. </p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Saging, why? Because babalatan mo muna bago kainin</p>
+        </div>
+      </div>
+
+     <div class="card">
+        <div class="photo-container">
+          <img src="cruz.jpg" class="photo-main" />
+          <img src="cruz_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Richard C. Cruz</div>
+        <div class="details">
+          <p><span class="label">November 6 (22 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/jackov.speed" target="_blank"> Richard Cruz</a></p>
+          <p><span class="label">About: </span><br>
+         Mysterious, Fun, Friendly, Kind, and is still mostly unknown.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Coffee, why? Because once na matikman mo, palagi mo na kong hahanapin, mapa hot man or iced depende sa mood, sweet pa rin. Sisipain lang kita para magising ka rin ng konte.</p>
+        </div>
+    </div>
+
+      <div class="card">
+        <div class="photo-container">
+          <img src="malda.png" class="photo-main" />
+          <img src="malda_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Kentseth Wesley M. Malda "Wesley, Kent"</div>
+        <div class="details">
+          <p><span class="label">October 29 (20 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/kentseth.malda" target="_blank">Kentseth Malda</a></p>
+          <p><span class="label">About: </span><br>
+         A passionate student focused on coding and development. My time is currently balanced between my programming endeavors, gaming, and essential house courses.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Halo-Halo, Why? Because halo-haloin muna bago kainin. </p>
+        </div>
+      </div>
+
+      <!-- PERSON 7 -->
+      <div class="card">
+        <div class="photo-container">
+          <img src="Amoyo.jpg" class="photo-main" />
+          <img src="Amoyo_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Amoyo, Allyssa P., "Ally"</div>
+        <div class="details">
+          <p><span class="label">May 13 (22 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/alpha.238 " target="_blank">Amoyo, Allyssa</a></p>
+          <p><span class="label">About:</span><br>
+           A woman with dreams in life and a strong determination to learn, especially in coding. I may be a fat woman, but I will nourish myself with knowledge for my skills and for the job I want someday.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Mais para sa akin na di na nga ninanais at hindi rin ako namimiss</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="photo-container">
+          <img src="Papa.jpg" class="photo-main" />
+          <img src="Papa_meme.jpg" class="photo-hover" />
+        </div>
+        <div class="name">Harold James M. Papa "Haja"</div>
+        <div class="details">
+          <p><span class="label">October 23 (24 years old)</span></p>
+          <p><span class="label">Facebook:</span> <a href="https://www.facebook.com/harold.mabanes/" target="_blank">Harold James</a></p>
+          <p><span class="label">About:</span><br>
+            A humble and hard working student who's passionate about coding, although gaming and house courses takes his time mostly.</p>
+          <p><span class="label">If you were food, what would you be and how would you like to be eaten, and why?</span><br>
+          Leftover Adobo, because the more they re-heat me, I became more tastier.</p>
+        </div>
+      </div>
+
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,2 +1,1 @@
-# CLOMA-LAWRENCE-2205-WEB101-ACTIVITY
-WEB PAGE ACTIVITY, FOR EDUCATIONAL PURPOSES
+This is our first activity for the course, WEB101. For academic purposes only.
